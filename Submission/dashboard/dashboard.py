@@ -192,10 +192,3 @@ with st.expander("💡 Lihat Insight"):
 
 st.divider()
 st.caption("Dashboard dibuat oleh Elviyanti | Olist E-Commerce Dataset")
-```
-
-Jangan lupa tambahkan `plotly` ke `requirements.txt`:
-```
-streamlit
-pandas
-plotly
