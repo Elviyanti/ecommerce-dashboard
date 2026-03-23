@@ -4,14 +4,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
 st.set_page_config(page_title="Dashboard E-Commerce Brasil", layout="wide")
 
-# Load data
+# ── LOAD DATA ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv('main_data.csv')
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    df = pd.read_csv(os.path.join(dir_path, 'main_data.csv'))
+
     df['customer_state'] = df['customer_state'].str.strip().str.upper()
     df['customer_city']  = df['customer_city'].str.strip().str.lower()
 
